@@ -7,12 +7,14 @@ export default async function shareHandler(
   res: NextApiResponse
 ) {
   const { method } = req;
-
+  console.log("in api share ");
   if (method === "POST") {
-    const { body } = req;
-    const text = await client.text.create({ data: { text: body?.text } });
-    return res.status(201).send({ id: text.id });
+    try {
+      const { body } = req;
+      const text = await client.text.create({ data: { text: body?.text } });
+      return res.status(201).send({ id: text.id });
+    } catch (error: any) {
+      return res.status(404).json({ message: error.message });
+    }
   }
-
-  return res.status(404).end();
 }

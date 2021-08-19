@@ -20,11 +20,6 @@ const Home: NextPage = () => {
       response
     );
 
-    console.log(
-      "🚀 ~ file: index.tsx ~ line 26 ~ handleEditor ~ response.json()",
-      await response.json()
-    );
-
     if (response.ok) {
       const { id } = await response.json();
       copy(window.location.href + `${id}`);
