@@ -51,11 +51,7 @@ const Home: NextPage = () => {
       </Head>
       <main className="container pb-10">
         <div className="h-screen-80 pb-20">
-          <div
-            ref={editorRef}
-            className={`${styles.editor}`}
-            contentEditable={true}
-          ></div>
+          <div ref={editorRef} className="editor" contentEditable={true}></div>
           <button onClick={handleEditor} className="btn-dark">
             Share it
           </button>
