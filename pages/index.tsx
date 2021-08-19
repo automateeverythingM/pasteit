@@ -2,8 +2,6 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useRef } from "react";
 import swal from "@sweetalert/with-react";
-
-import styles from "../styles/Home.module.css";
 import copy from "copy-to-clipboard";
 
 const Home: NextPage = () => {
@@ -17,6 +15,15 @@ const Home: NextPage = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text: editorContent }),
     });
+    console.log(
+      "🚀 ~ file: index.tsx ~ line 18 ~ handleEditor ~ response",
+      response
+    );
+
+    console.log(
+      "🚀 ~ file: index.tsx ~ line 26 ~ handleEditor ~ response.json()",
+      await response.json()
+    );
 
     if (response.ok) {
       const { id } = await response.json();
