@@ -1,4 +1,3 @@
-import { useRouter } from "next/dist/client/router";
 import React, { ReactElement, useEffect, useRef } from "react";
 interface IReadText {
   text: string;
