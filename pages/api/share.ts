@@ -11,8 +11,8 @@ export default async function shareHandler(
   if (method === "POST") {
     const { body } = req;
     const text = await client.text.create({ data: { text: body?.text } });
-    res.status(201).send({ id: text.id });
+    return res.status(201).send({ id: text.id });
   }
 
-  res.status(404).end();
+  return res.status(404).end();
 }

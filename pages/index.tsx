@@ -27,9 +27,7 @@ const Home: NextPage = () => {
         icon: "success",
         buttons: false,
       });
-      //TODO: push notifications
     } else {
-      //TODO: push error notifications
       swal({
         title: "Something went wrong",
         text: "Please try again",
