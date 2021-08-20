@@ -12,6 +12,7 @@ export default async function shareHandler(
     try {
       const { body } = req;
       const text = await client.text.create({ data: { text: body?.text } });
+      console.log("🚀 ~ file: share.ts ~ line 15 ~ text", text);
       return res.status(201).send({ id: text.id });
     } catch (error: any) {
       return res.status(404).json({ message: error.message });
