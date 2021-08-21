@@ -15,10 +15,6 @@ const Home: NextPage = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text: editorContent }),
     });
-    console.log(
-      "🚀 ~ file: index.tsx ~ line 18 ~ handleEditor ~ response",
-      response
-    );
 
     if (response.ok) {
       const { id } = await response.json();
