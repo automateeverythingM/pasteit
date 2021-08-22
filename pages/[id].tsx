@@ -5,7 +5,7 @@ interface IReadText {
 
 export async function getServerSideProps(context: any) {
   const id = context.params.id;
-  const response = await fetch("http://localhost:3000/api/" + id);
+  const response = await fetch("api/" + id);
 
   if (!response.ok) return { notFound: true };
 

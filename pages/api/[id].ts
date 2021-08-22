@@ -2,6 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { initFirebase } from "../../firebase/firebaseinit";
 
 const firestore = initFirebase();
+
 export default async function getByIdHandler(
   req: NextApiRequest,
   res: NextApiResponse
