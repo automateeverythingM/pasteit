@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
-
+import PaperPlane from "./icons/Send";
+import Link from "next/link";
 interface ILayout {
   children: React.ReactNode;
 }
@@ -7,7 +8,14 @@ interface ILayout {
 export default function Layout({ children }: ILayout): ReactElement {
   return (
     <>
-      <div className="banner py-3">Share Text Online</div>
+      <div className="banner py-5">
+        <Link href="/">
+          <a className="flex">
+            <PaperPlane fill="white" />{" "}
+            <span className="ml-3">Share Text Online</span>
+          </a>
+        </Link>
+      </div>
       {children}
       <footer className="footer">
         visit me on{" "}
