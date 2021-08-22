@@ -19,6 +19,10 @@ const Home: NextPage = () => {
     if (response.ok) {
       const { id } = await response.json();
       copy(window.location.href + `${id}`);
+      if (editorRef.current) {
+        editorRef.current.innerHTML = "";
+      }
+
       swal({
         title: "Text ready for share",
         text: "Link copied to clipboard",
