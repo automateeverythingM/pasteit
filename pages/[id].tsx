@@ -1,12 +1,12 @@
 import React, { ReactElement, useEffect, useRef } from "react";
+import { GetServerSideProps } from "next";
 interface IReadText {
   text: string;
 }
 
-export async function getServerSideProps(context: any) {
-  const id = context.params.id;
-  const response = await fetch("api/" + id);
-
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const id = context.params?.id;
+  const response = await fetch(process.env.HOST + `api/${id}`);
   if (!response.ok) return { notFound: true };
 
   const body = await response.json();
@@ -16,7 +16,7 @@ export async function getServerSideProps(context: any) {
       text: body.text,
     }, // will be passed to the page component as props
   };
-}
+};
 
 export default function ReadText({ text }: IReadText): ReactElement {
   const contentRef = useRef<HTMLDivElement>(null);
