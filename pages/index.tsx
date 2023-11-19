@@ -50,6 +50,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="container pb-10">
+        <a href="themarshallgroup://setup">Link</a>
         <div className="h-screen-80 pb-20">
           <div ref={editorRef} className="editor" contentEditable={true}></div>
           <button onClick={handleEditor} className="btn-dark">
